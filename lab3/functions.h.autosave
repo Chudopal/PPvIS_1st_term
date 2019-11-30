@@ -1,0 +1,14 @@
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+#include "operation.h"
+#include "input.h"
+
+class functions
+{
+public:
+    functions();
+private:
+    
+};
+
+#endif // FUNCTIONS_H
