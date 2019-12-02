@@ -49,6 +49,7 @@ void stack::print() {
     }
 }*/
 
+
 void stack::add(const int numb) {
     //cout << numb << endl;
     if(stackIsEmpty){

@@ -23,8 +23,6 @@ private:
     int findLabel(const string);
     void callfunc(const string, vector <vector<string>>);
     operation code;
-    //vector<vector<string>> word;
-    //vector <int> value;
     vector <string> name;
 };
 

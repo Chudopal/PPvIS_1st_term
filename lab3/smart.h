@@ -2,11 +2,14 @@
 #define SMART_H
 
 #include <QObject>
+#include <QStringList>
 
-class smart
+class smart : public QObject
 {
+    Q_OBJECT
 public:
-    smart();
+    explicit smart(QObject *parent, const QStringList& list);
+public slots:
 };
 
 #endif // SMART_H
