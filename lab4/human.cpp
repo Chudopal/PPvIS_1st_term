@@ -39,6 +39,7 @@ bool human::operator == (human oper) {
     }
 }
 
+
 void human::operator = (human &inp) {
     value = inp.getValue();
 }

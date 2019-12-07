@@ -1,5 +1,8 @@
 #include <iostream>
 #include "human.h"
+#include <iterator>
+#include <algorithm> // for std::inplace_merge
+#include <functional> // for std::less
 using namespace std;
 
 template <class Item>
@@ -36,38 +39,74 @@ void compexch(T& a, T&b)
 
     }
 }
-
-template <class Item>
-  void batchersort(Item a[], int l, int r)
- { int N = r-l+1;
-   for (int p = 1; p < N; p += p)
-        for (int k = p; k > 0; k /= 2)
-            for (int j = k%p; j+k < N; j += (k+k))
-                for (int i = 0; i < N-j-k; i++)
-                    if ((j+i)/(p+p) == (j+i+k)/(p+p))
-                        compexch(a[l+j+i], a[l+j+i+k]);
- }
-
-
 void show(human arr[], int size){
     for(int i =0; i < size; i++) {
         cout << arr[i].getValue() << "  ";
     }
-    cout << endl;
+}
+
+template<typename T>//алгоритм Боуза-Нельсона
+T* merge_sort(T *up, T *down, unsigned int left, unsigned int right)
+{
+    if (left == right)
+    {
+        down[left] = up[left];
+        return down;
+    }
+
+    unsigned int middle = (left + right) / 2;
+
+    // разделяй и сортируй
+    T *l_buff = merge_sort(up, down, left, middle);
+    T *r_buff = merge_sort(up, down, middle + 1, right);
+
+    // слияние двух отсортированных половин
+    T *target = (l_buff == up) ? down : up;
+
+    unsigned int l_cur = left, r_cur = middle + 1;
+    for (unsigned int i = left; i <= right; i++)
+    {
+        if (l_cur <= middle && r_cur <= right)
+        {
+            if (l_buff[l_cur] < r_buff[r_cur])
+            {
+                target[i] = l_buff[l_cur];
+                l_cur++;
+            }
+            else
+            {
+                target[i] = r_buff[r_cur];
+                r_cur++;
+            }
+        }
+        else if (l_cur <= middle)
+        {
+            target[i] = l_buff[l_cur];
+            l_cur++;
+        }
+        else
+        {
+            target[i] = r_buff[r_cur];
+            r_cur++;
+        }
+    }
+    return target;
 }
 
 int main(int argc, char *argv[])
 {
     {
-        human arr[16] = {2,1,8,4,5,3,10,7,9,0,11,10,14,13,12,15};
-        batchersort(arr, 0, 15);
-        show(arr, 16);
+        human arr[4] = {5,1,8,4};
+        human buff[4];
+        human *k= merge_sort(arr, buff, 0, 3);
+        show(k, 4);
         cout << endl;
     }
     {
-        human arr[16] = {2,1,8,4,5,3,10,7,9,0,11,10,14,13,12,15};
-        quickSort(arr, 0, 15);
-        show(arr, 16);
+        human arr[4] = {2,1,8,4};
+        quickSort(arr, 0, 3);
+        show(arr, 4);
+
         cout << endl;
     }
 }
