@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "matrix.h"
+#include <sstream>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,11 +17,20 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-private slots:
-    void on_pushButton_clicked();
-
 private:
     Ui::MainWindow *ui;
+    //Matrix a;
+    //Matrix b;
+    float valA;
+    float valB;
+    bool firstIsMatrix = false;
+    bool secondIsMatrix = false;
+    void make_matrix(Matrix &, Matrix &);
+    void showMatr(Matrix);
+private slots:
+    void on_pushButton_sum_clicked();
+    void on_pushButton_step_clicked();
+    void on_pushButton_mul_clicked();
+    void on_pushButton_det_clicked();
 };
 #endif // MAINWINDOW_H

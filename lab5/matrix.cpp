@@ -67,11 +67,6 @@ float Matrix::Nor() {
 Matrix::Matrix(int X, int Y) {
     int elem;
     vector<float> row;
-
-    if (X != 0 && Y != 0) {
-        cout << "Enter the elements:\n";
-    }
-
     for (int k = 0; k < X; k++) {
         for (int i = 0; i < Y; i++) {
             cin >> elem;
@@ -80,6 +75,14 @@ Matrix::Matrix(int X, int Y) {
         matrix.push_back(row);
         row.clear();
     }
+    rows = Y;
+    columns = X;
+    det = Determinator();
+    nor = Nor();
+}
+
+void Matrix::make (vector<float> n, int X, int Y) {
+    matrix.push_back(n);
     rows = Y;
     columns = X;
     det = Determinator();
@@ -241,6 +244,10 @@ void Matrix::printMatrix() {
         }
         cout << std::endl;
     }
+}
+
+vector <vector<float>> Matrix::getMatrix() const {
+    return matrix;
 }
 
 Matrix operator/(const Matrix& left, const int& right) {

@@ -17,11 +17,12 @@ private:
 protected:
 
     float Determinator();
-
     float Nor();
 
 public:
     Matrix(int X = 0, int Y = 0);
+    vector <vector<float>> getMatrix() const;
+    void make(vector<float>, int X, int Y);
 
     friend Matrix operator^(const Matrix &matrix_a, int value);
 
