@@ -108,7 +108,8 @@ void MainWindow::on_pushButton_sum_clicked()
 void MainWindow::on_pushButton_step_clicked()
 {
     if(ui->lineEdit_2matr_rows->text() != "1" || ui->lineEdit_2matr_colms->text() != "1"){
-     //....
+
+        ui->label_show->setText("В степень матрицы\n нельзя возводить");
     }
     else {
         Matrix a;
@@ -119,13 +120,16 @@ void MainWindow::on_pushButton_step_clicked()
         st = a^valB;
         showMatr(st);
     }
-
 }
 
 
 void MainWindow::on_pushButton_mul_clicked()
 {
     ui->label_show->clear();
+    if(ui->lineEdit_1matr_colms->text() != ui->lineEdit_2matr_rows->text()) {
+        ui->label_show->setText("Киличество столбцов первой\n матрицы не равно количеству\n строк второй");
+    }
+    else {
     Matrix a;
     Matrix b;
     make_matrix(a,b);
@@ -140,13 +144,20 @@ void MainWindow::on_pushButton_mul_clicked()
         mul = b + valB;
     }
     showMatr(mul);
+    }
 }
 
 void MainWindow::on_pushButton_det_clicked()
 {
+    ui->label_show->clear();
+    if(ui->lineEdit_1matr_rows->text() != ui->lineEdit_1matr_colms->text()) {
+        ui->label_show->setText("Матрицв не является квадратной");
+    }
+    else {
     Matrix a;
     Matrix b;
     ui->label_show->clear();
     make_matrix(a,b);
     ui->label_show->setNum(a.GetDet());
+    }
 }

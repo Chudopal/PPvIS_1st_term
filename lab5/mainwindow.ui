@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>631</height>
+    <width>1040</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -355,7 +355,7 @@ font-size:40px;
 </string>
         </property>
         <property name="text">
-         <string>dfdfd</string>
+         <string>результат</string>
         </property>
        </widget>
       </item>
