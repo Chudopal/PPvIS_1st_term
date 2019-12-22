@@ -34,8 +34,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    efs.h \
-    sf.h \
     bank.h \
     cart.h \
     main_window.h \
