@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        base.cpp \
         main.cpp \
         bank.cpp \
         cart.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
         info.cpp \
         pull.cpp \
         put.cpp \
+        read.cpp \
         trans.cpp
 
 # Default rules for deployment.
@@ -44,4 +46,5 @@ HEADERS += \
     info.h \
     pull.h \
     put.h \
+    read.h \
     trans.h
