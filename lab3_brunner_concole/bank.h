@@ -1,7 +1,0 @@
-#include "trans.h"
-#include "put.h"
-#include "pull.h"
-#include "info.h"
-#include "check.h"
-#include "check_pin.h"
-#include "change.h"
