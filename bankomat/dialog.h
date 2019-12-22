@@ -2,6 +2,8 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include "show_money.h"
+#include "replenish.h"
 
 namespace Ui {
 class Dialog;
@@ -17,6 +19,10 @@ public:
     bool get_is_closed() const;
 private slots:
     void on_pushButton_4_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Dialog *ui;

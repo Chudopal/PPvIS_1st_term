@@ -19,16 +19,22 @@ SOURCES += \
     cart.cpp \
     dialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    replenish.cpp \
+    show_money.cpp
 
 HEADERS += \
     cart.h \
     dialog.h \
-    mainwindow.h
+    mainwindow.h \
+    replenish.h \
+    show_money.h
 
 FORMS += \
     dialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    replenish.ui \
+    show_money.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

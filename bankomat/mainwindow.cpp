@@ -27,9 +27,8 @@ void MainWindow::on_enter_clicked()
         Dialog sec_wind;
         sec_wind.setModal(true);
         sec_wind.exec();
-        //if(sec_wind.get_is_closed()){
-        //   this->close();
-        //}
+        ui->pass->clear();
+        this->show();
     }
 }
 

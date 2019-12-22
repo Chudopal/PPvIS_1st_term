@@ -23,3 +23,19 @@ void Dialog::on_pushButton_4_clicked()
 bool Dialog::get_is_closed() const{
     return is_closed;
 }
+
+void Dialog::on_pushButton_clicked()
+{
+    this->close();
+    show_money balans;
+    balans.setModal(true);
+    balans.exec();
+}
+
+void Dialog::on_pushButton_2_clicked()
+{
+    this->close();
+    replenish a;
+    a.setModal(true);
+    a.exec();
+}
