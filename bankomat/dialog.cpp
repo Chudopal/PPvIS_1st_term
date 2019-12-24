@@ -30,7 +30,6 @@ void Dialog::on_pushButton_clicked()
 {
     this->close();
     show_money balans(this_cart);
-    balans.initialise(this_cart);
     balans.setModal(true);
     balans.exec();
 }

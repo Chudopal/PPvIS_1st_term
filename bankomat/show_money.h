@@ -16,7 +16,6 @@ class show_money : public QDialog
 public:
     explicit show_money(cart={}, QWidget *parent = nullptr);
     ~show_money();
-    void initialise(cart);
 private slots:
     void on_pushButton_clicked();
 private:

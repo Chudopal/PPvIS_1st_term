@@ -21,6 +21,3 @@ void show_money::on_pushButton_clicked()
 
 }
 
-void show_money::initialise(cart inp) {
-    this_cart = inp;
-}
