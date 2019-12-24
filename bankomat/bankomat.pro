@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     cart.cpp \
     dialog.cpp \
+    get_money.cpp \
     main.cpp \
     mainwindow.cpp \
     replenish.cpp \
@@ -26,12 +27,14 @@ SOURCES += \
 HEADERS += \
     cart.h \
     dialog.h \
+    get_money.h \
     mainwindow.h \
     replenish.h \
     show_money.h
 
 FORMS += \
     dialog.ui \
+    get_money.ui \
     mainwindow.ui \
     replenish.ui \
     show_money.ui

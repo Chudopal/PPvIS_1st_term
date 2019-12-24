@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QDebug>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -25,6 +25,7 @@ void MainWindow::on_enter_clicked()
     else{
         this->close();
         Dialog sec_wind;
+        sec_wind.initialise_cart(a);
         sec_wind.setModal(true);
         sec_wind.exec();
         ui->pass->clear();

@@ -17,6 +17,7 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
     bool get_is_closed() const;
+    void initialise_cart(cart);
 private slots:
     void on_pushButton_4_clicked();
 
@@ -24,9 +25,13 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
+
 private:
     Ui::Dialog *ui;
     bool is_closed;
+    cart this_cart;
 };
 
 #endif // DIALOG_H
